@@ -60,3 +60,8 @@ a:hover {
 a:active {
   color: white;
 }
+
+.leaflet-control-zoom-in,
+.leaflet-control-zoom-out{
+  color: black !important;
+}

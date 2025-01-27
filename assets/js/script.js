@@ -7,6 +7,7 @@ L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 const imageElement = document.createElement('img');
 imageElement.src = './assets/img/overlay.png';
+imageElement.alt = "Jet Lag: The Game tag overlay"
 imageElement.className = 'image-overlay';
 imageElement.style.width = '250px';
 imageElement.style.height = 'auto';

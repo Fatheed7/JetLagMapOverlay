@@ -17,7 +17,7 @@
 .slider-container {
     position: absolute;
     top: 10px;
-    right: 65px;
+    left: 50px;
     background-color: white;
     padding: 10px;
     border-radius: 5px;

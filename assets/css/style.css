@@ -45,23 +45,18 @@
     text-align: center;
   }
 
-a:link {
+.bottom-message a:link {
   color: white;
 }
 
-a:visited {
+.bottom-message a:visited {
   color: white;
 }
 
-a:hover {
+.bottom-message a:hover {
   color: lightgray;
 }
 
-a:active {
+.bottom-message a:active {
   color: white;
-}
-
-.leaflet-control-zoom-in,
-.leaflet-control-zoom-out{
-  color: black !important;
 }

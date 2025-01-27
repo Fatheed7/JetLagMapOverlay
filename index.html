@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Jet Lag: Map Overlay</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon//favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon//favicon-16x16.png">
+    <link rel="manifest" href="assets/favicon//site.webmanifest">
+</head>
+<body>
+    <div id="map"></div>
+    <div class="slider-container">
+        <label for="scale-slider">Scale: <span id="scale-value">250</span></label>
+        <input id="scale-slider" type="range" min="50" max="1000" value="250" step="5" />
+        <label for="rotate-slider">Rotation: <span id="rotate-value">0</span> degrees</label>
+        <input id="rotate-slider" type="range" min="0" max="360" value="0" step="1" />
+    </div>
+    <div class="bottom-message">
+        Use the sliders to adjust the scale and rotation of the image.<br> Stop reading this and check out Jet Lag:The Game on <a href="https://nebula.tv/jetlag" target="_blank">Nebula</a> or <a href="https://www.youtube.com/c/jetlagthegame" target="_blank">Youtube</a>.
+    </div>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

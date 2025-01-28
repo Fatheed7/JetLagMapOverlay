@@ -12,3 +12,18 @@ function toggleOverlay() {
       button.textContent = "Show Overlay";
     }
 }
+
+function fillLocationTile() {
+  const overlay = document.getElementsByClassName("image-overlay")[0];
+  const locationButton = document.getElementById("locationTileButton");
+  if(overlay.getAttribute("src") == "./assets/img/overlay.png")
+    {
+      overlay.setAttribute("src", "./assets/img/overlayGreen.png");
+      locationButton.textContent = "Location Tile: Green";
+    }
+    else
+    {
+      overlay.setAttribute("src", "./assets/img/overlay.png");
+      locationButton.textContent = "Location Tile: Clear";
+    }
+}

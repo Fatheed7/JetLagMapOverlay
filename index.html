@@ -15,11 +15,12 @@
         <div class="slider-container control-container">
             <label for="scale-slider">Scale: <span id="scale-value">250</span></label>
             <input id="scale-slider" type="range" min="50" max="1000" value="250" step="5" />
-            <label for="rotate-slider">Rotation: <span id="rotate-value">0</span> degrees</label>
+            <label for="rotate-slider">Rotation: <span id="rotate-value">0</span> deg</label>
             <input id="rotate-slider" type="range" min="0" max="360" value="0" step="1" />
         </div>
         <div class="button-container control-container">
             <button id="overlayButton" onclick="toggleOverlay()">Hide Overlay</button>
+            <button id="lockButton" onclick="lockOverlay()">Lock Overlay</button>
         </div>
         <div id="bottom-message">
             <span id="close">X</span>

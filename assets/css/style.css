@@ -37,7 +37,7 @@
   margin-bottom: 5px;
   }
 
-.bottom-message {
+#bottom-message {
   position: fixed;
   bottom: 10px;
   left: 50%;
@@ -52,22 +52,35 @@
   text-align: center;
 }
 
-.bottom-message a:link {
+#bottom-message a:link {
   color: white;
 }
 
-.bottom-message a:visited {
+#bottom-message a:visited {
   color: white;
 }
 
-.bottom-message a:hover {
+#bottom-message a:hover {
   color: lightgray;
 }
 
-.bottom-message a:active {
+#bottom-message a:active {
   color: white;
 }
 
 .hide-overlay{
   display: none !important;
+}
+
+#close {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  padding:2px 5px;
+  font-size: medium;
+}
+
+#close:hover {
+  color:red;
+  cursor: pointer;
 }

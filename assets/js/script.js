@@ -67,3 +67,11 @@
     });
 
     updateImagePosition();
+
+    document.getElementById("close").addEventListener("click", function (event) {
+      event.preventDefault();
+      const parentElement = document.getElementById("bottom-message")
+      if (parentElement) {
+          parentElement.classList.add("hide-overlay");
+      }
+    })

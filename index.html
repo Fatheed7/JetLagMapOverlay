@@ -12,11 +12,14 @@
 <body>
     <main>
         <div id="map"></div>
-        <div class="slider-container">
+        <div class="slider-container control-container">
             <label for="scale-slider">Scale: <span id="scale-value">250</span></label>
             <input id="scale-slider" type="range" min="50" max="1000" value="250" step="5" />
             <label for="rotate-slider">Rotation: <span id="rotate-value">0</span> degrees</label>
             <input id="rotate-slider" type="range" min="0" max="360" value="0" step="1" />
+        </div>
+        <div class="button-container control-container">
+            <button id="overlayButton" onclick="toggleOverlay()">Hide Overlay</button>
         </div>
         <div class="bottom-message">
             Use the sliders to adjust the scale and rotation of the image.<br> 
@@ -26,5 +29,6 @@
     </main>
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
     <script src="assets/js/script.js"></script>
+    <script src="assets/js/toggleOverlay.js"></script>
 </body>
 </html>

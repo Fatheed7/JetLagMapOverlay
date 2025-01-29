@@ -1,40 +1,27 @@
 const map = L.map('map').setView([0, 0], 2);
 
-const osmLayer = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-  maxZoom: 19,
-  attribution: '© OpenStreetMap contributors'
-});
+const tileLayers = {
+  "OpenStreetMap": 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  "Esri WorldTopoMap": 'https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}',
+  "Esri WorldGrayCanvas": 'https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Light_Gray_Base/MapServer/tile/{z}/{y}/{x}',
+  "CartoDB Positron": 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+  "CartoDB Positron No Labels": 'https://{s}.basemaps.cartocdn.com/light_nolabels/{z}/{x}/{y}{r}.png',
+  "Alidade Smooth": 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.jpg',
+  "Alidade Dark": 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png',
+  "Thunderforest Transport": 'https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=1c5223f3b25f4c82b3616abb648b09aa',
+  "Thunderforest Transport Dark": 'https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=1c5223f3b25f4c82b3616abb648b09aa'
+};
 
-const alidadeSmooth = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}.jpg', {
-  attribution: '© OpenStreetMap contributors'
-});
+const layers = Object.fromEntries(
+  Object.entries(tileLayers).map(([name, url]) => [
+    name,
+    L.tileLayer(url, { attribution: '© OpenStreetMap contributors' })
+  ])
+);
 
-const alidadeDark = L.tileLayer('https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}.png', {
-  attribution: '© OpenStreetMap contributors'
-});
+layers["Esri WorldTopoMap"].addTo(map);
 
-const thunderforestTransport = L.tileLayer('https://tile.thunderforest.com/transport/{z}/{x}/{y}.png?apikey=1c5223f3b25f4c82b3616abb648b09aa', {
-  attribution: '© OpenStreetMap contributors'
-});
-
-const thunderforestTransportDark = L.tileLayer('https://tile.thunderforest.com/transport-dark/{z}/{x}/{y}.png?apikey=1c5223f3b25f4c82b3616abb648b09aa', {
-  attribution: '© OpenStreetMap contributors'
-});
-
-const esriWorldTopoMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Topo_Map/MapServer/tile/{z}/{y}/{x}', {
-  attribution: '© OpenStreetMap contributors'
-});
-
-esriWorldTopoMap.addTo(map);
-
-L.control.layers({
-  "OpenStreetMap": osmLayer,
-  "Esri WorldTopoMap": esriWorldTopoMap,
-  "Alidade Smooth": alidadeSmooth,
-  "Alidade Dark": alidadeDark,
-  "Thunderforest Transport": thunderforestTransport,
-  "Thunderforest Transport Dark": thunderforestTransportDark
-}).addTo(map);
+L.control.layers(layers).addTo(map);
 
 const imageElement = document.createElement('img');
 imageElement.src = './assets/img/overlay.png';
